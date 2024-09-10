@@ -30,15 +30,14 @@ namespace ContaBancaria
 
             } while (resposta != "1" && resposta != "0");
 
-            Conta conta = new Conta(0100934, "Charleu", depositoInicial);
-            conta.ExibirDados();
-
-            Console.WriteLine("\nDigite uo valor depósito:");
+            Conta conta = new Conta(100934, "Charleu", depositoInicial);
+            Console.WriteLine(conta);
+            Console.WriteLine("\nDigite o valor para depósito:");
             conta.Depositar(double.Parse(Console.ReadLine()));
-            conta.ExibirDados();
+            Console.WriteLine(conta);
             Console.WriteLine("\nDigite o valor para saque:");
             conta.Sacar(double.Parse(Console.ReadLine()));
-            conta.ExibirDados();
+            Console.WriteLine(conta);
             Console.ReadKey();
         }
     }

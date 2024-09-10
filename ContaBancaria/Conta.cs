@@ -1,14 +1,13 @@
-﻿using System;
-
-namespace ContaBancaria
+﻿namespace ContaBancaria
 {
     class Conta
     {
         public int NumeroConta { get; private set; }
         public string Nome { get; set; }
         public double Saldo { get; private set; }
-        
+
         private double Taxa = 5.00;
+
         public Conta(int numeroConta, string nome)
         {
             NumeroConta = numeroConta;
@@ -30,9 +29,9 @@ namespace ContaBancaria
             Saldo -= quantia + Taxa;
         }
 
-        public void ExibirDados()
+        public override string ToString()
         {
-            Console.WriteLine($"\nConta: {NumeroConta}\nTitular: {Nome}\nSaldo atual: {Saldo.ToString("C")}");
+            return $"Conta {NumeroConta}\nTitular: {Nome}\nSaldo atual: {Saldo.ToString("C")}";
         }
     }
 }
